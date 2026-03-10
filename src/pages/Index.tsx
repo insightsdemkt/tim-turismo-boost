@@ -4,7 +4,6 @@ import Diferenciais from "@/components/Diferenciais";
 import Solucoes from "@/components/Solucoes";
 import ComoFunciona from "@/components/ComoFunciona";
 import QuemSomos from "@/components/QuemSomos";
-import ProjetosRealizados from "@/components/ProjetosRealizados";
 import PorQueEscolher from "@/components/PorQueEscolher";
 import Depoimentos from "@/components/Depoimentos";
 import FAQ from "@/components/FAQ";
@@ -22,7 +21,6 @@ const Index = () => {
         <Solucoes />
         <ComoFunciona />
         <QuemSomos />
-        <ProjetosRealizados />
         <PorQueEscolher />
         <Depoimentos />
         <FAQ />

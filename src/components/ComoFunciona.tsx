@@ -1,87 +1,59 @@
-import { useEffect, useRef, useState } from "react";
 import { MessageSquare, ClipboardList, CheckCircle } from "lucide-react";
 
 const steps = [
   {
-    num: "01",
+    num: "1",
     icon: MessageSquare,
-    title: "Entre em Contato",
-    desc: "Envie uma mensagem pelo WhatsApp ou ligue. Informe o tipo de serviço, data, horário e quantidade de passageiros.",
+    title: "Conte sua necessidade",
+    desc: "Envie uma mensagem pelo WhatsApp. Diga o tipo de serviço, data, horário e quantidade de passageiros.",
   },
   {
-    num: "02",
+    num: "2",
     icon: ClipboardList,
-    title: "Planejamento",
-    desc: "Nossa equipe elabora a melhor solução para sua demanda, com rota otimizada e veículos adequados.",
+    title: "Receba a proposta",
+    desc: "Em minutos, nossa equipe envia a melhor solução com rota otimizada e veículos adequados.",
   },
   {
-    num: "03",
+    num: "3",
     icon: CheckCircle,
-    title: "Execução Impecável",
-    desc: "No dia agendado, nosso motorista estará no local combinado, pontualmente, com veículo limpo e confortável.",
+    title: "Viaje com tranquilidade",
+    desc: "No dia marcado, motorista pontual no local combinado. Veículo limpo, confortável e climatizado.",
   },
 ];
 
 const ComoFunciona = () => {
-  const [activeStep, setActiveStep] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const stepIndex = Number(entry.target.getAttribute("data-step"));
-            setActiveStep(stepIndex);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    const stepElements = sectionRef.current?.querySelectorAll("[data-step]");
-    stepElements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="como-funciona" className="py-20 md:py-28 bg-background" ref={sectionRef}>
+    <section id="como-funciona" className="py-20 md:py-28 bg-surface">
       <div className="container">
-        <p className="font-body text-sm tracking-[0.2em] uppercase text-accent text-center mb-3">
-          Como Funciona
-        </p>
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground text-center mb-16">
-          Simples, rápido e eficiente
-        </h2>
+        <div className="text-center mb-14">
+          <p className="text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-3">
+            Como Funciona
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
+            Três passos. Zero complicação.
+          </h2>
+          <p className="text-muted-foreground max-w-lg mx-auto">
+            Do primeiro contato à execução, tudo pensado para ser simples e rápido.
+          </p>
+        </div>
 
-        <div className="max-w-2xl mx-auto flex flex-col gap-12">
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {steps.map((step, i) => (
-            <div
-              key={step.num}
-              data-step={i}
-              className={`flex gap-6 transition-opacity duration-700 ${
-                i === activeStep ? "opacity-100" : "opacity-30"
-              }`}
-            >
-              <div className="flex flex-col items-center flex-shrink-0">
-                <span className="font-heading font-bold text-2xl text-accent">
-                  {step.num}
-                </span>
-                {i < steps.length - 1 && (
-                  <div className="w-px h-full bg-border mt-2" />
-                )}
-              </div>
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <step.icon size={22} strokeWidth={1.5} className="text-foreground" />
-                  <h3 className="font-heading font-semibold text-xl text-foreground">
-                    {step.title}
-                  </h3>
+            <div key={step.num} className="relative text-center md:text-left">
+              {/* Connector line */}
+              {i < steps.length - 1 && (
+                <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-40px)] h-px bg-border" />
+              )}
+
+              <div className="flex flex-col items-center md:items-start">
+                <div className="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center mb-5 relative z-10">
+                  <step.icon size={24} strokeWidth={1.5} className="text-accent" />
                 </div>
-                <p className="font-body text-muted-foreground leading-relaxed">
-                  {step.desc}
-                </p>
+                <span className="text-xs font-bold text-accent tracking-wide mb-2">
+                  PASSO {step.num}
+                </span>
+                <h3 className="font-bold text-lg text-foreground mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             </div>
           ))}

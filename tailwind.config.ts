@@ -7,16 +7,12 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: "1.25rem",
       screens: {
-        "2xl": "1100px",
+        "2xl": "1120px",
       },
     },
     extend: {
-      fontFamily: {
-        heading: ["Montserrat", "sans-serif"],
-        body: ["Lato", "sans-serif"],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +42,10 @@ export default {
         whatsapp: {
           DEFAULT: "hsl(var(--whatsapp))",
           foreground: "hsl(var(--whatsapp-foreground))",
+        },
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          foreground: "hsl(var(--surface-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

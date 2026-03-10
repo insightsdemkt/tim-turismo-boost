@@ -2,91 +2,90 @@ import { useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const depoimentos = [
-  { nome: "Carlos M.", cargo: "Gerente de Logística", texto: "Serviço impecável. Nossos executivos sempre chegam no horário e com total conforto. Recomendo a Tim Turismo para qualquer empresa em BH.", estrelas: 5 },
-  { nome: "Ana Paula S.", cargo: "Assistente Executiva", texto: "Contratamos para um evento corporativo com 200 convidados. A logística foi perfeita, sem nenhum atraso. Profissionalismo exemplar.", estrelas: 5 },
-  { nome: "Roberto F.", cargo: "Diretor Comercial", texto: "Utilizo o serviço de receptivo no aeroporto toda semana. Motoristas educados, veículos limpos e pontuais. Excelente custo-benefício.", estrelas: 5 },
-  { nome: "Mariana L.", cargo: "Coordenadora de RH", texto: "O transporte de funcionários da nossa empresa é feito pela Tim Turismo há 3 anos. Nunca tivemos problemas. Confiança total.", estrelas: 5 },
-  { nome: "Felipe G.", cargo: "Organizador de Eventos", texto: "Já trabalhei com diversas empresas de transporte, mas a Tim Turismo se destaca pela organização e comunicação. Parceria duradoura.", estrelas: 5 },
-  { nome: "Juliana R.", cargo: "Gerente de Hotelaria", texto: "Nossos hóspedes sempre elogiam o serviço de transfer. A Tim Turismo é nossa parceira de confiança para receptivos em hotéis.", estrelas: 5 },
+  { nome: "Carlos M.", cargo: "Gerente de Logística", texto: "Serviço impecável. Nossos executivos sempre chegam no horário e com total conforto. Recomendo a Tim Turismo para qualquer empresa em BH." },
+  { nome: "Ana Paula S.", cargo: "Assistente Executiva", texto: "Contratamos para um evento corporativo com 200 convidados. A logística foi perfeita, sem nenhum atraso. Profissionalismo exemplar." },
+  { nome: "Roberto F.", cargo: "Diretor Comercial", texto: "Utilizo o serviço de receptivo no aeroporto toda semana. Motoristas educados, veículos limpos e pontuais. Excelente custo-benefício." },
+  { nome: "Mariana L.", cargo: "Coordenadora de RH", texto: "O transporte de funcionários da nossa empresa é feito pela Tim Turismo há 3 anos. Nunca tivemos problemas. Confiança total." },
+  { nome: "Felipe G.", cargo: "Organizador de Eventos", texto: "Já trabalhei com diversas empresas de transporte, mas a Tim Turismo se destaca pela organização e comunicação. Parceria duradoura." },
+  { nome: "Juliana R.", cargo: "Gerente de Hotelaria", texto: "Nossos hóspedes sempre elogiam o serviço de transfer. A Tim Turismo é nossa parceira de confiança para receptivos em hotéis." },
 ];
 
 const Depoimentos = () => {
   const [current, setCurrent] = useState(0);
-  const itemsPerView = typeof window !== "undefined" && window.innerWidth >= 768 ? 2 : 1;
-  const maxIndex = depoimentos.length - itemsPerView;
 
-  const prev = () => setCurrent((c) => Math.max(0, c - 1));
-  const next = () => setCurrent((c) => Math.min(maxIndex, c + 1));
+  const prev = () => setCurrent((c) => (c === 0 ? depoimentos.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === depoimentos.length - 1 ? 0 : c + 1));
+
+  const visible = [
+    depoimentos[current],
+    depoimentos[(current + 1) % depoimentos.length],
+  ];
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section id="depoimentos" className="py-20 md:py-28 bg-background">
       <div className="container">
-        <p className="font-body text-sm tracking-[0.2em] uppercase text-accent text-center mb-3">
-          Depoimentos
-        </p>
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground text-center mb-16">
-          O que dizem nossos clientes
-        </h2>
-
-        <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${current * (100 / itemsPerView)}%)` }}
-            >
-              {depoimentos.map((d, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 px-3"
-                  style={{ width: `${100 / itemsPerView}%` }}
-                >
-                  <div className="border border-border rounded p-6 h-full bg-background">
-                    <div className="flex items-center gap-1 mb-4">
-                      {Array.from({ length: d.estrelas }).map((_, si) => (
-                        <Star key={si} size={16} className="fill-accent text-accent" />
-                      ))}
-                    </div>
-                    <p className="font-body text-muted-foreground leading-relaxed mb-6 italic">
-                      "{d.texto}"
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-heading font-bold text-sm text-foreground">
-                        {d.nome.charAt(0)}
-                      </div>
-                      <div>
-                        <p className="font-heading font-semibold text-sm text-foreground">{d.nome}</p>
-                        <p className="font-body text-xs text-muted-foreground">{d.cargo}</p>
-                      </div>
-                      <img
-                        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_42x16dp.png"
-                        alt="Google"
-                        className="ml-auto h-4 opacity-60"
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-3">
+              Depoimentos
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+              Quem já usou, aprova.
+            </h2>
           </div>
-
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center gap-2">
             <button
               onClick={prev}
-              disabled={current === 0}
-              className="p-2 border border-border rounded text-accent hover:bg-secondary disabled:opacity-30 transition-colors"
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary transition-colors"
               aria-label="Anterior"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={18} />
             </button>
             <button
               onClick={next}
-              disabled={current >= maxIndex}
-              className="p-2 border border-border rounded text-accent hover:bg-secondary disabled:opacity-30 transition-colors"
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary transition-colors"
               aria-label="Próximo"
             >
-              <ChevronRight size={20} />
+              <ChevronRight size={18} />
             </button>
           </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {visible.map((d, i) => (
+            <div
+              key={`${current}-${i}`}
+              className="bg-surface rounded-xl p-7 border border-border"
+            >
+              <div className="flex items-center gap-0.5 mb-4">
+                {Array.from({ length: 5 }).map((_, si) => (
+                  <Star key={si} size={14} className="fill-accent text-accent" />
+                ))}
+              </div>
+              <p className="text-foreground leading-relaxed mb-6">
+                "{d.texto}"
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-xs font-bold text-accent">
+                    {d.nome.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{d.nome}</p>
+                    <p className="text-xs text-muted-foreground">{d.cargo}</p>
+                  </div>
+                </div>
+                <svg className="h-5 opacity-40" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="currentColor"/>
+                  <path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="currentColor"/>
+                  <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="currentColor"/>
+                  <path d="M225 3v65h-9.5V3h9.5z" fill="currentColor"/>
+                  <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="currentColor"/>
+                  <path d="M35.29 41.19V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49-.21z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,38 +1,36 @@
 import { Award, TrendingUp, Heart, Zap, ThumbsUp, Lock } from "lucide-react";
 
 const reasons = [
-  { icon: Award, title: "Experiência comprovada", desc: "Anos atendendo grandes empresas e eventos em MG." },
-  { icon: TrendingUp, title: "Custo-benefício", desc: "Preços justos com qualidade de serviço premium." },
-  { icon: Heart, title: "Dedicação ao cliente", desc: "Cada detalhe é pensado para sua satisfação." },
-  { icon: Zap, title: "Resposta rápida", desc: "Orçamento e confirmação em minutos pelo WhatsApp." },
-  { icon: ThumbsUp, title: "Flexibilidade", desc: "Serviços sob demanda adaptados à sua necessidade." },
-  { icon: Lock, title: "Confiabilidade", desc: "Compromisso com sigilo e profissionalismo em cada viagem." },
+  { icon: Award, title: "Experiência real", desc: "Anos atendendo grandes empresas e eventos em MG." },
+  { icon: TrendingUp, title: "Melhor custo-benefício", desc: "Qualidade premium a preços que fazem sentido." },
+  { icon: Heart, title: "Obsessão pelo cliente", desc: "Cada detalhe pensado para sua satisfação." },
+  { icon: Zap, title: "Orçamento em minutos", desc: "Resposta rápida. Sem burocracia." },
+  { icon: ThumbsUp, title: "Total flexibilidade", desc: "Sob demanda, recorrente ou pontual." },
+  { icon: Lock, title: "Confiança e sigilo", desc: "Profissionalismo e discrição em cada viagem." },
 ];
 
 const PorQueEscolher = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary">
+    <section className="py-20 md:py-28 bg-surface">
       <div className="container">
-        <p className="font-body text-sm tracking-[0.2em] uppercase text-accent text-center mb-3">
-          Por que Nos Escolher?
-        </p>
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground text-center mb-16">
-          Motivos para confiar na Tim Turismo
-        </h2>
+        <div className="text-center mb-14">
+          <p className="text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-3">
+            Por que a Tim Turismo?
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+            6 motivos para fechar com a gente
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((r) => (
-            <div key={r.title} className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <r.icon size={28} strokeWidth={1.5} className="text-foreground" />
+            <div key={r.title} className="flex gap-4 p-5 rounded-xl bg-background border border-border">
+              <div className="w-10 h-10 rounded-lg bg-accent/8 flex items-center justify-center flex-shrink-0">
+                <r.icon size={20} strokeWidth={1.5} className="text-accent" />
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-1">
-                  {r.title}
-                </h3>
-                <p className="font-body text-muted-foreground leading-relaxed">
-                  {r.desc}
-                </p>
+                <h3 className="font-semibold text-foreground mb-1">{r.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
               </div>
             </div>
           ))}
