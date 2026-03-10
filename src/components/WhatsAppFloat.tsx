@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WA = "https://wa.me/5531998169654?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20grátis.";
+const WA = "https://wa.me/5531998169654?text=Olá!%20Gostaria%20de%20um%20orçamento%20rápido.";
 
 const WhatsAppFloat = () => {
   return (
