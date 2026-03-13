@@ -23,18 +23,36 @@ const QuemSomos = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { num: "8+", label: "Anos de experiência" },
-              { num: "500+", label: "Eventos atendidos" },
-              { num: "10k+", label: "Passageiros transportados" },
-              { num: "50+", label: "Empresas parceiras" },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-surface rounded-xl p-6 text-center">
-                <p className="text-3xl font-bold text-foreground mb-1">{stat.num}</p>
-                <p className="text-xs text-muted-foreground">{stat.label}</p>
+          <div className="space-y-4">
+            <div className="rounded-2xl overflow-hidden aspect-[16/10]">
+              <img
+                src="/imagens/frota-garagem-frontal.jpg"
+                alt="Frota Tim Turismo estacionada"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img src="/imagens/frota-garagem.jpg" alt="Garagem Tim Turismo" className="w-full h-full object-cover" loading="lazy" />
               </div>
-            ))}
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img src="/imagens/frota-van-branca.jpg" alt="Van Tim Turismo" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            </div>
+            <div className="grid grid-cols-4 gap-3 mt-4">
+              {[
+                { num: "8+", label: "Anos" },
+                { num: "500+", label: "Eventos" },
+                { num: "10k+", label: "Passageiros" },
+                { num: "50+", label: "Empresas" },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-surface rounded-xl p-3 text-center">
+                  <p className="text-xl font-bold text-foreground">{stat.num}</p>
+                  <p className="text-[10px] text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
