@@ -1,10 +1,19 @@
 import { Users, Snowflake, ShieldCheck, Sparkles } from "lucide-react";
 
 const veiculos = [
-  { img: "/imagens/frota-sedan.jpg", title: "Sedan Executivo", cap: "Até 4 passageiros" },
-  { img: "/imagens/frota-van.jpg", title: "Van Executiva", cap: "Até 15 passageiros" },
-  { img: "/imagens/frota-micro.jpg", title: "Micro-ônibus", cap: "Até 28 passageiros" },
-  { img: "/imagens/frota-interior.jpg", title: "Interior Premium", cap: "Conforto total" },
+  { img: "/imagens/frota-van-branca.jpg", title: "Van Executiva", cap: "Até 18 passageiros" },
+  { img: "/imagens/frota-micro-onibus.jpg", title: "Micro-ônibus", cap: "Até 32 passageiros" },
+  { img: "/imagens/frota-van-executiva.jpg", title: "Van Comfort", cap: "Até 20 passageiros" },
+  { img: "/imagens/frota-van-estrada.jpg", title: "Van Sprinter", cap: "Até 15 passageiros" },
+];
+
+const galeria = [
+  { img: "/imagens/frota-garagem.jpg", alt: "Frota estacionada na garagem" },
+  { img: "/imagens/frota-evento.jpg", alt: "Transporte para eventos" },
+  { img: "/imagens/frota-hotel.jpg", alt: "Receptivo em hotéis" },
+  { img: "/imagens/frota-aeroporto.jpg", alt: "Transfer no aeroporto" },
+  { img: "/imagens/frota-comboio.jpg", alt: "Comboio de veículos" },
+  { img: "/imagens/frota-garagem-frontal.jpg", alt: "Garagem com frota completa" },
 ];
 
 const destaques = [
@@ -30,10 +39,11 @@ const Frota = () => {
           </p>
         </div>
 
+        {/* Cards principais */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {veiculos.map((v) => (
             <div key={v.title} className="group rounded-xl overflow-hidden bg-background border border-border">
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={v.img}
                   alt={`${v.title} - Frota Tim Turismo`}
@@ -45,6 +55,20 @@ const Frota = () => {
                 <h3 className="font-semibold text-sm text-foreground">{v.title}</h3>
                 <p className="text-xs text-muted-foreground mt-0.5">{v.cap}</p>
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Galeria de fotos */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-12">
+          {galeria.map((g) => (
+            <div key={g.alt} className="rounded-xl overflow-hidden aspect-[16/10]">
+              <img
+                src={g.img}
+                alt={g.alt}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
