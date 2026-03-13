@@ -3,14 +3,14 @@ import { ArrowUpRight } from "lucide-react";
 const WA_BASE = "https://wa.me/5531998169654?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20";
 
 const servicos = [
-  { title: "Transporte Corporativo", desc: "Deslocamento executivo com conforto para reuniões e compromissos.", img: "/imagens/servico-corporativo.jpg" },
-  { title: "Receptivo Aeroporto", desc: "Transfer nos aeroportos de Confins e Pampulha com identificação.", img: "/imagens/servico-aeroporto.jpg" },
-  { title: "Receptivo em Hotéis", desc: "Traslado entre hotéis e locais de eventos em BH.", img: "/imagens/servico-hotel.jpg" },
-  { title: "Eventos Corporativos", desc: "Logística completa para convenções, congressos e feiras.", img: "/imagens/servico-eventos-corp.jpg" },
-  { title: "Eventos Sociais", desc: "Transporte para casamentos, formaturas e confraternizações.", img: "/imagens/servico-eventos-social.jpg" },
-  { title: "Transporte de Funcionários", desc: "Fretamento contínuo ou temporário para colaboradores.", img: "/imagens/servico-funcionarios.jpg" },
-  { title: "Sob Demanda", desc: "Serviço flexível para necessidades pontuais e urgentes.", img: "/imagens/servico-demanda.jpg" },
-  { title: "Traslados para Feiras e Shows", desc: "Transporte para grandes eventos em Minas Gerais.", img: "/imagens/servico-feiras.jpg" },
+  { title: "Transporte Corporativo", desc: "Deslocamento executivo com conforto para reuniões e compromissos.", img: "/imagens/frota-van-executiva.jpg" },
+  { title: "Receptivo Aeroporto", desc: "Transfer nos aeroportos de Confins e Pampulha com identificação.", img: "/imagens/frota-aeroporto.jpg" },
+  { title: "Receptivo em Hotéis", desc: "Traslado entre hotéis e locais de eventos em BH.", img: "/imagens/frota-hotel.jpg" },
+  { title: "Eventos Corporativos", desc: "Logística completa para convenções, congressos e feiras.", img: "/imagens/frota-comboio.jpg" },
+  { title: "Eventos Sociais", desc: "Transporte para casamentos, formaturas e confraternizações.", img: "/imagens/frota-evento.jpg" },
+  { title: "Transporte de Funcionários", desc: "Fretamento contínuo ou temporário para colaboradores.", img: "/imagens/frota-garagem.jpg" },
+  { title: "Sob Demanda", desc: "Serviço flexível para necessidades pontuais e urgentes.", img: "/imagens/frota-van-estrada.jpg" },
+  { title: "Traslados para Feiras e Shows", desc: "Transporte para grandes eventos em Minas Gerais.", img: "/imagens/frota-micro-onibus.jpg" },
 ];
 
 const Solucoes = () => {

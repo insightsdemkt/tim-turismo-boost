@@ -61,7 +61,7 @@ const Hero = () => {
           <div className="relative hidden lg:block">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img
-                src="/imagens/hero-bg.jpg"
+                src="/imagens/frota-hotel.jpg"
                 alt="Frota Tim Turismo - Transporte corporativo em Belo Horizonte"
                 className="w-full h-full object-cover"
                 loading="eager"
