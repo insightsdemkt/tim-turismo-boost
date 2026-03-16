@@ -24,9 +24,9 @@ const PorQueEscolher = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
           {reasons.map((r) => (
-            <div key={r.title} className="flex gap-4 p-5 rounded-xl bg-background border border-border">
+            <div key={r.title} className="flex gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-background border border-border">
               <div className="w-10 h-10 rounded-lg bg-accent/8 flex items-center justify-center flex-shrink-0">
                 <r.icon size={20} strokeWidth={1.5} className="text-accent" />
               </div>

@@ -40,7 +40,7 @@ const QuemSomos = () => {
                 <img src="/imagens/frota-van-branca.jpg" alt="Van Tim Turismo" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
-            <div className="grid grid-cols-4 gap-3 mt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
               {[
                 { num: "8+", label: "Anos" },
                 { num: "500+", label: "Eventos" },
@@ -48,7 +48,7 @@ const QuemSomos = () => {
                 { num: "50+", label: "Empresas" },
               ].map((stat) => (
                 <div key={stat.label} className="bg-surface rounded-xl p-3 text-center">
-                  <p className="text-xl font-bold text-foreground">{stat.num}</p>
+                  <p className="text-lg sm:text-xl font-bold text-foreground">{stat.num}</p>
                   <p className="text-[10px] text-muted-foreground">{stat.label}</p>
                 </div>
               ))}

@@ -58,7 +58,7 @@ const Depoimentos = () => {
           {visible.map((d, i) => (
             <div
               key={`${current}-${i}`}
-              className="bg-surface rounded-xl p-7 border border-border"
+              className="bg-surface rounded-xl p-5 sm:p-7 border border-border"
             >
               <div className="flex items-center gap-3 mb-4">
                 {/* Google icon */}

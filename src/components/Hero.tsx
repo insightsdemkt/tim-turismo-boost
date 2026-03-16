@@ -11,7 +11,7 @@ const badges = [
 const Hero = () => {
   return (
     <section id="inicio" className="relative overflow-hidden bg-background pt-[72px]">
-      <div className="container py-20 md:py-28 lg:py-36">
+      <div className="container py-14 sm:py-20 md:py-28 lg:py-36">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left */}
           <div className="max-w-xl">
@@ -20,37 +20,37 @@ const Hero = () => {
               Transporte Corporativo em BH e MG
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground text-balance mb-5">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground text-balance mb-4 sm:mb-5">
               Chega de atrasos e
               <span className="text-accent"> dor de cabeça com transporte.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-lg">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 sm:mb-8 max-w-lg">
               Fretamento executivo com frota própria, motoristas treinados e pontualidade garantida. Sua equipe no lugar certo, sem preocupação. Orçamento grátis em minutos.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6 sm:mb-8">
               <a
                 href={WA}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-lg hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold text-sm px-6 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-accent/90 transition-colors w-full sm:w-auto"
               >
                 Solicitar Orçamento Grátis
                 <ArrowRight size={16} />
               </a>
               <a
                 href="tel:+5531998169654"
-                className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground font-semibold text-sm px-7 py-3.5 rounded-lg hover:bg-secondary/80 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground font-semibold text-sm px-6 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-secondary/80 transition-colors w-full sm:w-auto"
               >
                 <Phone size={16} />
                 Ligar Agora
               </a>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               {badges.map((b) => (
-                <div key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div key={b} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                   <CheckCircle size={15} className="text-whatsapp flex-shrink-0" />
                   {b}
                 </div>

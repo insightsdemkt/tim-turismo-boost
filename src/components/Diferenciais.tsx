@@ -22,11 +22,11 @@ const Diferenciais = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {items.map((item) => (
             <div
               key={item.title}
-              className="group p-6 rounded-xl bg-background border border-border hover:border-accent/20 transition-colors"
+              className="group p-5 sm:p-6 rounded-xl bg-background border border-border hover:border-accent/20 transition-colors"
             >
               <div className="w-10 h-10 rounded-lg bg-accent/8 flex items-center justify-center mb-4 group-hover:bg-accent/12 transition-colors">
                 <item.icon size={20} strokeWidth={1.5} className="text-accent" />
