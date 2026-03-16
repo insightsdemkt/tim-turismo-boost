@@ -20,13 +20,13 @@ const Hero = () => {
               Transporte Corporativo em BH e MG
             </div>
 
-            <h1 className="text-4xl md:text-[3.25rem] lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground text-balance mb-5">
-              Fretamento e transporte executivo
-              <span className="text-accent"> com pontualidade garantida.</span>
+            <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground text-balance mb-5">
+              Transporte executivo
+              <span className="text-accent"> com pontualidade.</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
-              Vans, micro-ônibus e ônibus para empresas, eventos e receptivos em Minas Gerais. Orçamento grátis em minutos.
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
+              Fretamento de vans, micro-ônibus e ônibus para empresas, eventos e receptivos em MG.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
