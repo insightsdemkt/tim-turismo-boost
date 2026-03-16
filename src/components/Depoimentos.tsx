@@ -54,7 +54,7 @@ const Depoimentos = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
           {visible.map((d, i) => (
             <div
               key={`${current}-${i}`}

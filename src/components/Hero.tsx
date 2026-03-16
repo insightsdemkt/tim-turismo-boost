@@ -29,7 +29,7 @@ const Hero = () => {
               Fretamento de vans, micro-ônibus e ônibus para empresas, eventos e receptivos em MG.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <a
                 href={WA}
                 target="_blank"
