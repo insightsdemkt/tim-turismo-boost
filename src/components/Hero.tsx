@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone } from "lucide-react";
 
 const WA = "https://wa.me/5531998169654?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.";
 
@@ -17,16 +17,16 @@ const Hero = () => {
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 bg-accent/10 text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Transporte Corporativo em BH
+              Transporte Corporativo em BH e MG
             </div>
 
             <h1 className="text-4xl md:text-[3.25rem] lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground text-balance mb-5">
-              Seu time no lugar certo,
-              <span className="text-accent"> na hora certa.</span>
+              Fretamento e transporte executivo
+              <span className="text-accent"> com pontualidade garantida.</span>
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
-              Transporte executivo para empresas que não podem se dar ao luxo de atrasos. Receptivos, traslados e eventos em Minas Gerais.
+              Vans, micro-ônibus e ônibus para empresas, eventos e receptivos em Minas Gerais. Orçamento grátis em minutos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -40,10 +40,11 @@ const Hero = () => {
                 <ArrowRight size={16} />
               </a>
               <a
-                href="#como-funciona"
+                href="tel:+5531998169654"
                 className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground font-semibold text-sm px-7 py-3.5 rounded-lg hover:bg-secondary/80 transition-colors"
               >
-                Como funciona?
+                <Phone size={16} />
+                Ligar Agora
               </a>
             </div>
 

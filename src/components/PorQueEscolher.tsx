@@ -1,4 +1,6 @@
-import { Award, TrendingUp, Heart, Zap, ThumbsUp, Lock } from "lucide-react";
+import { Award, TrendingUp, Heart, Zap, ThumbsUp, Lock, ArrowRight } from "lucide-react";
+
+const WA = "https://wa.me/5531998169654?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.";
 
 const reasons = [
   { icon: Award, title: "Experiência real", desc: "Anos atendendo grandes empresas e eventos em MG." },
@@ -22,7 +24,7 @@ const PorQueEscolher = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {reasons.map((r) => (
             <div key={r.title} className="flex gap-4 p-5 rounded-xl bg-background border border-border">
               <div className="w-10 h-10 rounded-lg bg-accent/8 flex items-center justify-center flex-shrink-0">
@@ -34,6 +36,18 @@ const PorQueEscolher = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <a
+            href={WA}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold text-sm px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors"
+          >
+            Fale Conosco pelo WhatsApp
+            <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>
