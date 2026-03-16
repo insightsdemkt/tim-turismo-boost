@@ -21,12 +21,12 @@ const Hero = () => {
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground text-balance mb-5">
-              Transporte executivo
-              <span className="text-accent"> com pontualidade.</span>
+              Chega de atrasos e
+              <span className="text-accent"> dor de cabeça com transporte.</span>
             </h1>
 
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
-              Fretamento de vans, micro-ônibus e ônibus para empresas, eventos e receptivos em MG.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-lg">
+              Fretamento executivo com frota própria, motoristas treinados e pontualidade garantida. Sua equipe no lugar certo, sem preocupação. Orçamento grátis em minutos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
