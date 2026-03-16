@@ -1,4 +1,6 @@
-import { MessageSquare, ClipboardList, CheckCircle } from "lucide-react";
+import { MessageSquare, ClipboardList, CheckCircle, ArrowRight } from "lucide-react";
+
+const WA = "https://wa.me/5531998169654?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.";
 
 const steps = [
   {
@@ -37,14 +39,12 @@ const ComoFunciona = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           {steps.map((step, i) => (
             <div key={step.num} className="relative text-center md:text-left">
-              {/* Connector line */}
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-40px)] h-px bg-border" />
               )}
-
               <div className="flex flex-col items-center md:items-start">
                 <div className="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center mb-5 relative z-10">
                   <step.icon size={24} strokeWidth={1.5} className="text-accent" />
@@ -57,6 +57,18 @@ const ComoFunciona = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <a
+            href={WA}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold text-sm px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors"
+          >
+            Solicitar Orçamento Agora
+            <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>

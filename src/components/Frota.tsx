@@ -1,4 +1,6 @@
-import { Users, Snowflake, ShieldCheck, Sparkles } from "lucide-react";
+import { Users, Snowflake, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
+
+const WA = "https://wa.me/5531998169654?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20frota.";
 
 const veiculos = [
   { img: "/imagens/frota-van-branca.jpg", title: "Van Executiva", cap: "Até 18 passageiros" },
@@ -73,13 +75,25 @@ const Frota = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-10">
           {destaques.map((d) => (
             <div key={d.label} className="flex items-center gap-2 text-sm text-muted-foreground">
               <d.icon size={16} strokeWidth={1.5} className="text-accent" />
               {d.label}
             </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <a
+            href={WA}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold text-sm px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors"
+          >
+            Conhecer Frota Completa
+            <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>
