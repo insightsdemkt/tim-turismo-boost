@@ -62,7 +62,7 @@ const Frota = () => {
         </div>
 
         {/* Galeria de fotos */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-12">
           {galeria.map((g) => (
             <div key={g.alt} className="rounded-xl overflow-hidden aspect-[16/10]">
               <img

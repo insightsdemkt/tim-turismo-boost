@@ -11,7 +11,7 @@ const badges = [
 const Hero = () => {
   return (
     <section id="inicio" className="relative overflow-hidden bg-background pt-[72px]">
-      <div className="container py-20 md:py-28 lg:py-36">
+      <div className="container py-14 sm:py-20 md:py-28 lg:py-36">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left */}
           <div className="max-w-xl">
